@@ -84,7 +84,7 @@ int choice;
 
     do {
        
-        cout << "\n1. View Profile\n2. Add Post\n3. Like Post\n4. Unlike Post\n5. Add Friend\n6. Remove Friend\n7. Suggest Friend\n8. Degree of Separation\n9. Display all Post\n10. Print Graph (Matrix)\n11. Print Graph (List)\n12. View Other Profile\n0. Exit\n";
+        cout << "\n1. View Profile\n2. Add Post\n3. Like Post\n4. Unlike Post\n5. Add Friend\n6. Remove Friend\n7. Suggest Friend\n8. Degree of Separation\n9. Add Connection\n10. Print Graph (Matrix)\n11. Print Graph (List)\n12. View Other Profile\n0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -118,8 +118,11 @@ int choice;
                 break;
             }
             case 9: {
-                displayallpost(username);
-                break;
+                string user1, user2;
+                cout << "Enter usernames to add an edge: ";
+                cin >> user1 >> user2;
+                network.addEdge(user1, user2);
+		    break;
             }
             case 10:
                 printGraphMatrix();
